@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>CucumberTests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jun 01 15:47:20 IST 2026</td>
+<td>Started on:</td><td>Mon Jun 01 17:15:56 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>143 seconds (143884 ms)</td>
+<tr><td>Total time:</td><td>96 seconds (96113 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,43 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should logout properly", "Verify Logout Functionality"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: a.ico-logout (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SOWMIT~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62533}, goog:processID: 24792, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62533/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 156951d8f9e54d28d40c1f877b2a4c24
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at StepDefinition.POM_Implementation.logout(POM_Implementation.java:141)
-	at StepDefinition.Logout.user_clicks_on_logout_button(Logout.java:82)
-	at ✽.user clicks on logout button(file:///C:/Users/SOWMITHRAN/OneDrive/Desktop/Java%20Wipro/Cucumber/src/test/resources/features/Logout.feature:7)
-</pre></div><a href='#' onClick='toggleBox("stack-trace33847681", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace33847681'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: a.ico-logout (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.217, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SOWMIT~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62533}, goog:processID: 24792, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62533/devtoo..., se:cdpVersion: 148.0.7778.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 156951d8f9e54d28d40c1f877b2a4c24
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at StepDefinition.POM_Implementation.logout(POM_Implementation.java:141)
-	at StepDefinition.Logout.user_clicks_on_logout_button(Logout.java:82)
-	at ✽.user clicks on logout button(file:///C:/Users/SOWMITHRAN/OneDrive/Desktop/Java%20Wipro/Cucumber/src/test/resources/features/Logout.feature:7)
-</pre></div></td>
-<td>48</td>
-<td>Runner.Runnerclass@757277dc</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -113,34 +76,34 @@ Session ID: 156951d8f9e54d28d40c1f877b2a4c24
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User clicks Add to cart", "Verify Add to cart Functionality"</td>
-<td></td>
-<td>16</td>
-<td>Runner.Runnerclass@757277dc</td></tr>
-<tr>
-<td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should search with valid product name", "Search Product Functionality"</td>
-<td></td>
-<td>6</td>
-<td>Runner.Runnerclass@757277dc</td></tr>
-<tr>
 <td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate total price", "Verify price functionality"</td>
 <td></td>
-<td>23</td>
-<td>Runner.Runnerclass@757277dc</td></tr>
-<tr>
-<td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should apply filters", "Verify filters functionality"</td>
-<td></td>
-<td>8</td>
+<td>25</td>
 <td>Runner.Runnerclass@757277dc</td></tr>
 <tr>
 <td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should login with valid credentials", "Verify Login Functionality"</td>
 <td></td>
+<td>8</td>
+<td>Runner.Runnerclass@757277dc</td></tr>
+<tr>
+<td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should apply filters", "Verify filters functionality"</td>
+<td></td>
 <td>7</td>
+<td>Runner.Runnerclass@757277dc</td></tr>
+<tr>
+<td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User clicks Add to cart", "Verify Add to cart Functionality"</td>
+<td></td>
+<td>17</td>
+<td>Runner.Runnerclass@757277dc</td></tr>
+<tr>
+<td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should search with valid product name", "Search Product Functionality"</td>
+<td></td>
+<td>5</td>
 <td>Runner.Runnerclass@757277dc</td></tr>
 <tr>
 <td title='Runner.Runnerclass.runScenario()'><b>runScenario</b><br>Test class: Runner.Runnerclass<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User is able to buy product", "Verify checkout Functionality"</td>
 <td></td>
-<td>32</td>
+<td>30</td>
 <td>Runner.Runnerclass@757277dc</td></tr>
 </table><p>
 </body>

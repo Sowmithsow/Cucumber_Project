@@ -50,7 +50,7 @@ public class POM_Implementation {
 	By checkout=By.id("checkout");
 	
 	//Logout
-	By logout=By.xpath("//a[@class=\"ico-logout\"]");
+	By logout = By.cssSelector("a.ico-logout");
 	
 	public void loginbtn() {
 		
@@ -133,12 +133,16 @@ public class POM_Implementation {
 	
 	public void logout() {
 		
-		wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		
-		wait.until(ExpectedConditions.elementToBeClickable(logout));
-		
-		driver.findElement(logout).click();
+
+		    driver.navigate().to("https://demo.nopcommerce.com/");
+		    
+		    wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    
+		    wait.until(ExpectedConditions.elementToBeClickable(logout));
+		    
+		    driver.findElement(logout).click();
+		}
 		
 	}
 
-}
+

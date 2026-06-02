@@ -1,73 +1,45 @@
 pipeline {
     agent any
- 
+
     tools {
         maven 'Maven3'
     }
- 
+
     stages {
- 
+
         stage('Checkout') {
             steps {
                 git branch: 'master',
-                    url:'https://github.com/Sowmithsow/Cucumber_Project.git'
+                    url: 'https://github.com/Sowmithsow/Cucumber_Project.git'
             }
         }
- 
-        stage('Build') {
+
+        stage('Build & Test') {
             steps {
-                bat 'mvn clean'
+                bat 'mvn clean install'
             }
         }
- 
-        stage('Compile') {
+
+        stage('Docker Build') {
             steps {
-                bat 'mvn compile'
+                bat 'docker build -t cucumber-framework .'
             }
         }
- 
-        stage('Test') {
+
+        stage('Docker Run') {
             steps {
-                bat 'mvn test'
-            }
-        }
- 
-        stage('Package') {
-            steps {
-                bat 'mvn package'
+                bat 'docker run --rm cucumber-framework'
             }
         }
     }
-    stage('Docker Build') {
 
-    steps {
-
-        bat 'docker build -t cucumber-framework .'
-
-    }
-
-}
-
- 
-
-stage('Docker Run') {
-
-    steps {
-
-        bat 'docker run --rm cucumber-framework'
-
-    }
-
-}
- 
     post {
         success {
             echo 'Build Successful'
         }
- 
+
         failure {
             echo 'Build Failed'
         }
     }
 }
- 

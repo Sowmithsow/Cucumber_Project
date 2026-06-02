@@ -10,12 +10,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Hooks {
 
     public static WebDriver driver;
 
     @Before
     public void setup() {
+
+        WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");

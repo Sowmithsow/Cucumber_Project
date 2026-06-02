@@ -10,8 +10,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class Hooks {
 
     public static WebDriver driver;
@@ -19,20 +17,18 @@ public class Hooks {
     @Before
     public void setup() {
 
-        WebDriverManager.chromedriver().setup();
-
         ChromeOptions options = new ChromeOptions();
+        options.setBinary("/usr/bin/chromium"); 
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-allow-origins=*");
 
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options); 
 
         driver.get("https://demowebshop.tricentis.com/");
 
         driver.manage().window().setSize(new Dimension(1920,1080));
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 

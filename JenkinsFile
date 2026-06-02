@@ -14,20 +14,22 @@ pipeline {
             }
         }
 
-        stage('Build & Test') {
+        stage('Build (Skip Tests)') {
             steps {
-                bat 'mvn clean install'
+                bat 'mvn clean install -DskipTests'
             }
         }
 
         stage('Docker Build') {
             steps {
-                bat 'docker build -t cucumber-framework .'
+                // 🔥 Important: no-cache to avoid old broken images
+                bat 'docker build --no-cache -t cucumber-framework .'
             }
         }
 
-        stage('Docker Run') {
+        stage('Docker Run (Execute Tests)') {
             steps {
+                // 🔥 This is where Selenium tests run inside Docker
                 bat 'docker run --rm cucumber-framework'
             }
         }
@@ -35,11 +37,15 @@ pipeline {
 
     post {
         success {
-            echo 'Build Successful'
+            echo '✅ Build Successful - All tests passed'
         }
 
         failure {
-            echo 'Build Failed'
+            echo '❌ Build Failed - Check logs for errors'
+        }
+
+        always {
+            echo 'Pipeline execution completed'
         }
     }
 }

@@ -4,27 +4,27 @@ WORKDIR /app
 COPY . .
 
 RUN apt-get update && apt-get install -y \
-    wget unzip curl gnupg \
-    fonts-liberation \
-    libasound2 \
-    libatk-bridge2.0-0 \
-    libatk1.0-0 \
-    libcups2 \
-    libdbus-1-3 \
-    libgdk-pixbuf2.0-0 \
-    libnspr4 \
+    chromium \
+    chromium-driver \
+    libglib2.0-0 \
     libnss3 \
+    libgconf-2-4 \
+    libfontconfig1 \
     libx11-xcb1 \
     libxcomposite1 \
     libxdamage1 \
     libxrandr2 \
-    xdg-utils \
     libgbm1 \
-    libxshmfence1 \
-    && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && apt install -y ./google-chrome-stable_current_amd64.deb
+    libasound2 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdbus-1-3 \
+    wget unzip curl \
+    && rm -rf /var/lib/apt/lists/*
 
-ENV SE_MANAGER_DRIVER_TIMEOUT=60
+ENV CHROME_BIN=/usr/bin/chromium
+ENV WEBDRIVER_CHROME_DRIVER=/usr/bin/chromedriver
 
 RUN mvn clean install -DskipTests
 

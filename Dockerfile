@@ -3,12 +3,12 @@ FROM maven:3.9.9-eclipse-temurin-21
 WORKDIR /app
 COPY . .
 
-# Install Chromium properly
+# Install Chromium + all required dependencies
 RUN apt-get update && apt-get install -y \
     chromium \
     chromium-driver \
-    chromium-common \
     chromium-sandbox \
+    fonts-liberation \
     libglib2.0-0 \
     libnss3 \
     libgconf-2-4 \
@@ -23,16 +23,21 @@ RUN apt-get update && apt-get install -y \
     libatk-bridge2.0-0 \
     libcups2 \
     libdbus-1-3 \
+    libu2f-udev \
+    libvulkan1 \
+    xdg-utils \
     wget unzip curl \
+    --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
+RUN ls -l /usr/bin | grep chrom
 
-RUN which chromium
-RUN which chromedriver
-
+# Environment variables
 ENV CHROME_BIN=/usr/bin/chromium
 ENV WEBDRIVER_CHROME_DRIVER=/usr/bin/chromedriver
 
+# Build project
 RUN mvn clean install -DskipTests
 
+# Run tests
 CMD ["mvn","-Dtest=Runner.Runnerclass","test"]
